@@ -1,12 +1,12 @@
 {
     "prod": {
         "config": {
-            "host": "<A DEFINIR>",
+            "host": "127.0.0.1",
             "APP": "prod",
             "PORT": 3300,
 
             "DB_DIALECT" : "mysql",
-            "DB_HOST" : "<A DEFINIR>",
+            "DB_HOST" : "127.0.0.1",
             "DB_PORT" : "3306",
             "DB_NAME" : "polypus",
             "DB_USER" : "polypus",
@@ -16,3 +16,4 @@
             "JWT_EXPIRATION" : "10000"
         }
     }
+}

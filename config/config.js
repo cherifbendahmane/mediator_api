@@ -18,6 +18,8 @@ console.log('Environment: from config', process.env.NODE_ENV);
  * environment, run 'export NODE_ENV=prod' for production
  * -------------------------------------------------------
  */
+ 
+ console.log(app_env_config);
 
 var applicationEnv = app_env_config[process.env.NODE_ENV].config;
 CONFIG = {} // Make this global to use all over the application
