@@ -1,7 +1,5 @@
 //-- IMPORTS
 
-
-
 //-------------------------------------------
 
 
@@ -17,11 +15,15 @@ const sequelize = new Sequelize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_passwo
 
 const create = async function(req, res){  
 
+	res.send("Create");
+
 }
 
 //-------------------------------------------
 
 const get = async function(req, res){
+	
+	res.send("Get");
 	
 }
 
@@ -29,18 +31,23 @@ const get = async function(req, res){
 
 const update = async function(req, res){
 	
+	res.send("Update");
+	
 }
 
 //-------------------------------------------
 
-const remove = async function(req, res){   
+const remove = async function(req, res){  
+
+	res.send("Delete");
  
 }
 
 //-------------------------------------------
 
 
-module.exports.remove = remove;
-module.exports.update = update;
-module.exports.get = get;
 module.exports.create = create;
+module.exports.get = get;
+module.exports.update = update;
+module.exports.remove = remove;
+
