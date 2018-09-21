@@ -1,10 +1,10 @@
-//-- IMPORTS
+//------------------------------------------- IMPORTS
 
 const Users		= require('./../models').Users;
 const UsersProfile		= require('./../models').UsersProfile;
 const usersService = require("../services/UsersService"); 
 
-//-------------------------------------------
+//------------------------------------------- BDD connect
 
 var Sequelize = require('sequelize');
 const sequelize = new Sequelize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_password, {
@@ -13,6 +13,8 @@ const sequelize = new Sequelize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_passwo
   port: CONFIG.db_port,
   operatorsAliases: false
 });
+
+//-------------------------------------------  CREATE
 
 const createUser = async function(req, res){
 
@@ -36,7 +38,7 @@ const createUserProfile = async function(req, res){
 
 }
 
-//-------------------------------------------
+//-------------------------------------------  READ
 
 const getAllUsers = async function(req, res){
 	
@@ -109,7 +111,7 @@ const getUserProfile = async function(req, res){
 	
 }
 
-//-------------------------------------------
+//-------------------------------------------  UPDATE
 
 const updateUser = async function(req, res){
 	
@@ -162,7 +164,7 @@ const updateUserProfile = async function(req, res){
 	
 }
 
-//-------------------------------------------
+//-------------------------------------------  DELETE
 
 const removeUser = async function(req, res){  
 
@@ -190,8 +192,7 @@ const removeUserProfile = async function(req, res){
  
 }
 
-//-------------------------------------------
-
+//-------------------------------------------  MODULE EXPORTS
 
 module.exports.createUser = createUser;
 module.exports.getAllUsers = getAllUsers;

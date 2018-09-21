@@ -19,6 +19,7 @@
     "fs": "0.0.1-security",
     "generate-object-property": "^1.2.0",
     "htmlspecialchars": "^1.0.5",
+    "https": "^1.0.0",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.2.1",
     "morgan": "~1.9.0",
