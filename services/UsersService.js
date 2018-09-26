@@ -1,22 +1,41 @@
-const Users 			= require('./../models').Users;
-const UsersProfile		= require('./../models').UsersProfile;
-const validator     = require('validator');
+const AccountTypes	= require('./../models').account_types;
+const Users = require('./../models').users;
+const SpeakersProfile = require('./../models').speakers_profile;
+const ClientsProfile = require('./../models').clients_profile;
+const validator = require('validator');
+const Sequelize = require('sequelize');
 
 
-const createUser = async function(userInfo){
+const createAccountType = async function(data){
     let unique_key, auth_info, err;
 
     auth_info={}
     auth_info.status='create';
-    Users.create(userInfo);
+    AccountTypes.create(data);
 }
-const createUserProfile = async function(userProfileInfo){
+const createUser = async function(data){
     let unique_key, auth_info, err;
 
     auth_info={}
     auth_info.status='create';
-    UsersProfile.create(userProfileInfo);
+    Users.create(data);
+}
+const createClientsProfile = async function(data){
+    let unique_key, auth_info, err;
+
+    auth_info={}
+    auth_info.status='create';
+    ClientsProfile.create(data);
+}
+const createSpeakersProfile = async function(data){
+    let unique_key, auth_info, err;
+
+    auth_info={}
+    auth_info.status='create';
+    SpeakersProfile.create(data);
 }
 
+module.exports.createAccountType = createAccountType;
 module.exports.createUser = createUser;
-module.exports.createUserProfile = createUserProfile;
+module.exports.createClientsProfile = createClientsProfile;
+module.exports.createSpeakersProfile = createSpeakersProfile;

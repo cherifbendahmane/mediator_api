@@ -4,7 +4,7 @@
 const jwt           	= require('jsonwebtoken');
 
 module.exports = (sequelize, DataTypes) => {
-    var Model = sequelize.define('account_types', {
+    var Model = sequelize.define('interventions_types', {
         name       : 	DataTypes.STRING,
     },
     { indexes: [ { unique: true, fields: [ 'name' ] } ] });

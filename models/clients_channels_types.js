@@ -4,10 +4,10 @@
 const jwt           	= require('jsonwebtoken');
 
 module.exports = (sequelize, DataTypes) => {
-    var Model = sequelize.define('account_types', {
-        name       : 	DataTypes.STRING,
-    },
-    { indexes: [ { unique: true, fields: [ 'name' ] } ] });
+    var Model = sequelize.define('clients_channels_types', {
+        channel       : 	DataTypes.INTEGER,
+        type       : 	DataTypes.INTEGER,
+    });
 
     return Model;
 };

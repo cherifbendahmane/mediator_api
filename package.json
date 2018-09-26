@@ -1,9 +1,9 @@
 {
-  "name": "polypus",
+  "name": "mediator",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon bin/www-polypus"
+    "start": "nodemon bin/www-mediator"
   },
   "dependencies": {
     "bcrypt": "^1.0.3",

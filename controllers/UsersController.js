@@ -1,8 +1,11 @@
 //------------------------------------------- IMPORTS
 
-const Users		= require('./../models').Users;
-const UsersProfile		= require('./../models').UsersProfile;
+const AccountTypes	= require('./../models').account_types;
+const Users = require('./../models').users;
+const SpeakersProfile = require('./../models').speakers_profile;
+const ClientsProfile = require('./../models').clients_profile;
 const usersService = require("../services/UsersService"); 
+
 
 //------------------------------------------- BDD connect
 
@@ -27,16 +30,6 @@ const createUser = async function(req, res){
 
 }
 
-const createUserProfile = async function(req, res){
-
-	let err, user;
-	res.setHeader('Content-Type', 'application/json');
-	const body = req.body;    
-    [err, user] = await to(usersService.createUserProfile(body));
-    if(err) return ReE(res, err, 422);
-    return ReS(res, {message:'Successfully created new user.'}, 201);
-
-}
 
 //-------------------------------------------  READ
 
@@ -75,41 +68,7 @@ const getUser = async function(req, res){
 	
 }
 
-const getAllUsersProfile = async function(req, res){
-	
-	UsersProfile.findAll({
-		
-	}).then(function(todo){
-		
-		if(todo){
-			
-			res.send(todo);
-		}
-		
-	});
-	
-	
-}
 
-const getUserProfile = async function(req, res){
-	
-	UsersProfile.find({
-		
-		where : {
-			id: req.params.id
-		}
-		
-	}).then(function(todo){
-		
-		if(todo){
-			
-			res.send(todo);
-		}
-		
-	});
-	
-	
-}
 
 //-------------------------------------------  UPDATE
 
@@ -138,32 +97,6 @@ const updateUser = async function(req, res){
 	
 }
 
-const updateUserProfile = async function(req, res){
-	
-	UsersProfile.find({
-		
-        where:{
-            user: req.params.id
-        }
-		
-    }).then(function(todo) {
-		
-        if(todo){
-			
-			todo.updateAttributes({
-			  
-				firstname: req.body.firstname,
-				lastname: req.body.lastname,
-				birthdate: req.body.birthdate,
-				company: req.body.company
-			
-			}).then(function(todo) {			  			
-          });
-        }
-      });
-	
-}
-
 //-------------------------------------------  DELETE
 
 const removeUser = async function(req, res){  
@@ -179,18 +112,6 @@ const removeUser = async function(req, res){
  
 }
 
-const removeUserProfile = async function(req, res){  
-
-	UsersProfile.destroy({
-		
-        where:{
-            user: req.params.id
-        }
-		}).then(function(todo){
-		});
-
- 
-}
 
 //-------------------------------------------  MODULE EXPORTS
 
@@ -199,10 +120,4 @@ module.exports.getAllUsers = getAllUsers;
 module.exports.getUser = getUser;
 module.exports.updateUser = updateUser;
 module.exports.removeUser = removeUser;
-
-module.exports.createUserProfile = createUserProfile;
-module.exports.getAllUsersProfile = getAllUsersProfile;
-module.exports.getUserProfile = getUserProfile;
-module.exports.updateUserProfile = updateUserProfile;
-module.exports.removeUserProfile = removeUserProfile;
 
