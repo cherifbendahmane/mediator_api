@@ -6,7 +6,7 @@ const validator = require('validator');
 const Sequelize = require('sequelize');
 
 
-const createAccountType = async function(data){
+const createAccountTypes = async function(data){
     let unique_key, auth_info, err;
 
     auth_info={}
@@ -35,7 +35,7 @@ const createSpeakersProfile = async function(data){
     SpeakersProfile.create(data);
 }
 
-module.exports.createAccountType = createAccountType;
+module.exports.createAccountTypes = createAccountTypes;
 module.exports.createUser = createUser;
 module.exports.createClientsProfile = createClientsProfile;
 module.exports.createSpeakersProfile = createSpeakersProfile;
