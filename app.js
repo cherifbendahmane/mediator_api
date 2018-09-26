@@ -33,18 +33,18 @@ models.sequelize.authenticate().then(() => {
 
 models.sequelize.sync();
 
-/*
+
 if(CONFIG.app==='dev'){
     models.sequelize.sync();//creates table if they do not already exist
     models.sequelize.sync({ force: true });//deletes all tables then recreates them useful for testing and development purposes
 }
-*/
+
 // CORS
 app.use(function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
     // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Origin, X-Requested-With, content-type, Authorization, Content-Type');
     // Set to true if you need the website to include cookies in the requests sent
@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use('/route', route);
+app.use('/mediator', route);
 
 // error handler
 app.use(function(err, req, res, next) {
