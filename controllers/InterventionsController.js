@@ -64,6 +64,9 @@ const getAllInterventionsStatus = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 	});
 }
 
@@ -77,6 +80,9 @@ const getAllInterventionsTypes = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 	});
 }
 
@@ -89,6 +95,9 @@ const getAllInterventions = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
+		}
+		else{
+			res.end();
 		}
 	});
 }
@@ -105,7 +114,10 @@ const getInterventionsStatus = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
-		}		
+		}	
+		else{
+			res.end();
+		}
 	});	
 }
 
@@ -120,7 +132,10 @@ const getInterventionsTypes = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
-		}		
+		}	
+		else{
+			res.end();
+		}
 	});	
 }
 
@@ -135,7 +150,10 @@ const getInterventions = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
-		}		
+		}	
+		else{
+			res.end();
+		}
 	});	
 }
 
@@ -162,6 +180,9 @@ const updateInterventionsStatus = async function(req, res){
 				res.end();	
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -187,6 +208,9 @@ const updateInterventionsTypes = async function(req, res){
 				res.end();	
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -217,6 +241,9 @@ const updateInterventions = async function(req, res){
 					res.end();	
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }

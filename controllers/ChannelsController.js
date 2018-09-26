@@ -64,6 +64,9 @@ const getAllChannelsTypes = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 	});
 }
 
@@ -77,6 +80,9 @@ const getAllClientsChannels = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 	});
 }
 
@@ -89,6 +95,9 @@ const getAllClientsChannelsTypes = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
+		}
+		else{
+			res.end();
 		}
 	});
 }
@@ -105,7 +114,10 @@ const getChannelsTypes = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
-		}		
+		}
+		else{
+			res.end();
+		}
 	});	
 }
 
@@ -120,7 +132,10 @@ const getClientsChannels = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
-		}		
+		}
+		else{
+			res.end();
+		}
 	});	
 }
 
@@ -135,7 +150,10 @@ const getClientsChannelsTypes = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
-		}		
+		}	
+		else{
+			res.end();
+		}
 	});	
 }
 
@@ -162,6 +180,9 @@ const updateChannelsTypes = async function(req, res){
 				res.end();	
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -188,6 +209,9 @@ const updateClientsChannels = async function(req, res){
 					res.end();	
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -214,6 +238,9 @@ const updateClientsChannelsTypes = async function(req, res){
 					res.end();	
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -228,7 +255,10 @@ const removeChannelsTypes = async function(req, res){
         where:{
             id: req.params.id
         }
-		}).then(function(todo){  
+		}).then(function(todo){
+			
+			res.end();
+		
 		});
 
 }

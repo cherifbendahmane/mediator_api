@@ -108,6 +108,9 @@ const getAllAccountTypes = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 	});
 }
 
@@ -121,6 +124,9 @@ const getAllUsers = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 	});
 }
 
@@ -133,6 +139,9 @@ const getAllClients = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
+		}
+		else{
+			res.end();
 		}
 	});
 }
@@ -164,6 +173,9 @@ const getAccountTypes = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 		
 	});
 	
@@ -183,6 +195,9 @@ const getUser = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
+		}
+		else{
+			res.end();
 		}
 		
 	});
@@ -204,6 +219,9 @@ const getClient = async function(req, res){
 			
 			res.send(todo);
 		}
+		else{
+			res.end();
+		}
 		
 	});
 	
@@ -223,6 +241,9 @@ const getSpeaker = async function(req, res){
 		if(todo){
 			
 			res.send(todo);
+		}
+		else{
+			res.end();
 		}
 		
 	});
@@ -254,6 +275,9 @@ const updateAccountTypes = async function(req, res){
 				res.end();
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -281,6 +305,9 @@ const updateUser = async function(req, res){
 				res.end();
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -307,6 +334,9 @@ const updateClient = async function(req, res){
 				res.end();			
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
@@ -336,6 +366,9 @@ const updateSpeaker = async function(req, res){
 				res.end();				
           });
         }
+		else{
+			res.end();
+		}
       });
 	
 }
