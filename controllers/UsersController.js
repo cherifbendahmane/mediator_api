@@ -5,6 +5,7 @@ const Users = require('./../models').users;
 const SpeakersProfile = require('./../models').speakers_profile;
 const ClientsProfile = require('./../models').clients_profile;
 const usersService = require("../services/UsersService"); 
+const Crypto = require('crypto');
 
 
 //------------------------------------------- BDD connect
@@ -16,6 +17,37 @@ const sequelize = new Sequelize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_passwo
   port: CONFIG.db_port,
   operatorsAliases: false
 });
+
+//-------------------------------------------  CONNEXION
+
+const connect = async function(req, res){
+	
+	let password = req.body.password;
+	
+	Users.find({
+		
+		where : {
+			username: req.body.username
+		}
+		
+	}).then(function(todo){
+		
+		if(todo){
+			
+			if (Crypto.pbkdf2Sync(password, todo.salt, 1000, 64, `sha512`).toString(`hex`) === todo.password){
+				res.json({status: "ACCEPTED", user : todo});
+			}
+			else{
+				res.json({status : "REFUSED", message : "Invalid password"});
+			}
+		}
+		else{
+			res.json({status : "REFUSED", message : "Username does not exists"});
+		}
+		
+	});
+	
+}
 
 //-------------------------------------------  CREATE
 
@@ -364,6 +396,8 @@ const removeSpeaker = async function(req, res){
 
 
 //-------------------------------------------  MODULE EXPORTS
+
+module.exports.connect = connect;
 
 module.exports.createAccountTypes = createAccountTypes;
 module.exports.createUser = createUser;
