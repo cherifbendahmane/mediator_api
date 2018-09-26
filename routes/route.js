@@ -5,6 +5,7 @@ const router = express.Router();
 const UsersController = require('./../controllers/UsersController');
 const ChannelsController = require('./../controllers/ChannelsController');
 const InterventionsController = require('./../controllers/InterventionsController');
+const CheckMailController = require('./../controllers/CheckMailController');
 
 const passport = require('passport');
 const path = require('path');
@@ -14,6 +15,8 @@ router.get('/', function(req, res, next) {
   res.json({status:"Success response", message:"Mediator_API", data:{"version_number":"v0.0.1"}})
 });
 
+
+router.get(	'/generate-token',					CheckMailController.generateToken);
 
 router.post(	'/connect', 					UsersController.connect);
 

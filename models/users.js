@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
         password		: 	DataTypes.STRING,
 		salt			:	DataTypes.STRING,
         account_type	:	DataTypes.INTEGER,
+		token 			:	DataTypes.STRING,
+		active			:	DataTypes.BOOLEAN,
     },
     { indexes: [ { unique: true, fields: [ 'username' ] } ] });
 

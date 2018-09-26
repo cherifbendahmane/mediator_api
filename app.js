@@ -33,11 +33,12 @@ models.sequelize.authenticate().then(() => {
 
 models.sequelize.sync();
 
-
+/*
 if(CONFIG.app==='dev'){
     models.sequelize.sync();//creates table if they do not already exist
     models.sequelize.sync({ force: true });//deletes all tables then recreates them useful for testing and development purposes
 }
+*/
 
 // CORS
 app.use(function (req, res, next) {

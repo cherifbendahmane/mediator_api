@@ -299,7 +299,9 @@ const updateUser = async function(req, res){
 				username: req.body.username,
 				password: req.body.password,
 				salt: req.body.salt,
-				account_type: req.body.account_type
+				account_type: req.body.account_type,
+				token: req.body.token,
+				active: req.body.active
 			
 			}).then(function(todo) {
 				res.end();
